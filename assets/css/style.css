@@ -1,8 +1,114 @@
 @charset "UTF-8";
 
-h1{
-   background-color: rgb(255, 255, 255);
+h1:first-letter {
+  font-size: 2em;
+  color: #7172ac;
 }
 body{
 background-color: rgb(255,200,200);
+}
+.yoko p{
+  float: left;
+  width:  200px
+}
+body {
+  margin:auto;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.cp_navi {
+	position: relative;
+	overflow: hidden;
+	width: 360px;
+	height:360px;
+}
+.cp_navi #cp_sidenav a {
+	font-size: 20px;
+	position: absolute;
+	left: -95px;
+	width: 110px;
+	height: 54px;
+	padding: 12px 150px;
+	transition: 0.3s;
+	text-decoration: none;
+	color: #ffffff;
+	border-radius: 0 5px 5px 0;
+}
+.cp_navi #cp_sidenav a:hover {
+	left: -10px;
+}
+.cp_navi #home {
+	top: 20px;
+	background-color: #da3c41;
+}
+.cp_navi #news {
+	top: 80px;
+	background-color: #1b2538;
+}
+.cp_navi #contact {
+	top: 140px;
+	background-color: #2e9b72;
+}
+.cp_navi #about {
+	top: 200px;
+	background-color: #a62e7a;
+}
+.cp_actab {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	margin: 0 auto;
+	color: #ffffff;
+}
+
+.cp_actab input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.cp_actab label {
+	font-weight: bold;
+	line-height: 3;
+	position: relative;
+	display: block;
+	padding: 0 0 0 1em;
+	cursor: pointer;
+	margin: 0 0 1px 0;
+	background: #da3c41;
+}
+.cp_actab .cp_actab-content {
+	overflow: hidden;
+	max-height: 0;
+	-webkit-transition: max-height 0.35s;
+	transition: max-height 0.35s;
+	color: #333333;
+	background: #f1c6c6;
+}
+.cp_actab .cp_actab-content p {
+	margin: 1em;
+}
+/* :checked */
+.cp_actab input:checked ~ .cp_actab-content {
+	max-height: 20em;
+}
+/* Icon */
+.cp_actab label::after {
+	line-height: 3;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 3em;
+	height: 3em;
+	-webkit-transition: all 0.35s;
+	transition: all 0.35s;
+	text-align: center;
+}
+.cp_actab input[type=checkbox] + label::after {
+	content: '+';
+}
+.cp_actab input[type=checkbox]:checked + label::after {
+	transform: rotate(315deg);
 }
