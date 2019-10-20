@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tanjiのpage</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <h1>Arduino制作過程のページ</h1>
+        </ul>
+      </nav>
+    </header>
+    <hr>
+    <main>
+      <h3>どちらかのボタンを押したら点灯し、両方押したら点滅する装置。</h3>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/O9gsZqF7xqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <h4>以下はこの装置のプログラム</h4>
+  <hr>
+    <h5> int sensVal1 = 0;
+      <br>int sensVal2 = 0;
+<br>
+<br>    void setup() {
+<br>
+<br>    pinMode(2,INPUT);　　　　　　　//2はインプットです
+<br>      Serial.begin(9600);
+<br>    pinMode(7,INPUT);　　　　　　　//7はインプットです
+<br>      Serial.begin(9600);
+<br>    pinMode(13,OUTPUT);　　　　　//13はアウトプットです
+<br>      Serial.begin(9600);
+<br>        }
+<br>
+<br>
+<br>      void loop() {
+<br>
+<br>        sensVal1 = digitalRead(2);
+<br>        sensVal2 = digitalRead(7);
+<br>        if (sensVal1 == 1){
+<br>          if(sensVal2 == 0){
+<br>          digitalWrite(13, HIGH);　　　　//センサー1が1かつセンサー2が0の時LED13は点灯する
+<br>          }
+<br>        }else{　　　　　　　　　　　　　　　　　　　
+<br>           digitalWrite(13, LOW);}　　　　　　　　
+<br>        if (sensVal2 == 1){　　　　　　　　　　　　　
+<br>        if (sensVal1 == 0){
+<br>          digitalWrite(13, HIGH);　　　　//センサー1が0かつセンサー2が1の時LED13は点灯する
+<br>        }　　　　　　　　　　　　　　　//どちらかが1の時はLED13が点灯する
+<br>        }else{
+<br>        digitalWrite(13, LOW);}
+<br>          if (sensVal1 == 1){
+<br>          if (sensVal2 == 1){　　　　　　//センサー1が1かつセンサー2が１の時
+<br>           digitalWrite(13, HIGH)　　　　//LED13は点灯する
+<br>            delay(100);　　　　　　　　　　//0.1秒間
+<br>           digitalWrite(13, LOW)　　　　//LED13は消灯する
+<br>            delay(100);　　　　　　　　　　//0.1秒間
+<br>        }　　　　　　　　　　　　　　　　//両方が1の時LED13は点滅する
+<br>}
+<br>}
+</h5>
+
+    </main>
+  </body>
+</html>
